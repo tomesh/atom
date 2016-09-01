@@ -1,6 +1,16 @@
+#### vim-mode configuration
+
+# map jj to escape
 'atom-text-editor.vim-mode.insert-mode':
   'j j': 'vim-mode:activate-normal-mode'
 
+# prevent going to command mode with c-c
+'atom-text-editor.vim-mode':
+  'ctrl-c': 'core:copy'
+
+#### control shortcuts
+
+# c-( and c-) to for traversing tabs
 'body':
   'ctrl-0': 'pane:show-next-item'
   'ctrl-9': 'pane:show-previous-item'
