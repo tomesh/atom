@@ -1,0 +1,26 @@
+# C/C++
+'.source.c, .source.cpp, .source.objc, .source.objcpp':
+  'main()':
+    'prefix': 'main'
+    'body': '#include <stdio.h> \n\nint main(int argc, char const *argv[])\n{\n\t${1:/* code */}\n\treturn 0;\n}'
+  'void':
+    'prefix': 'void'
+    'body': 'void ${1:name}(${2:/* arguments */})\n{\n\t${3:/* code */}\n}'
+  'function':
+    'prefix': 'func'
+    'body': '${1:int} ${2:name}(${3:/* arguments */})\n{\n\t${5:/* code */}\n\treturn ${4:0};\n}'
+  'For Loop':
+    'prefix': 'for'
+    'body': 'for (int ${1:i} = 0; ${1:i} < ${2:count}; ${1:i}${3:++}) {\n\t${4:/* code */}\n}'
+
+# lua
+'.source.lua':
+  'function':
+    'prefix': 'fun'
+    'body': 'function ${1:FunctionName}(${2:args})\n\t${0:-- body...}\nend'
+  'for i = 1,10':
+    'prefix': 'for'
+    'body': 'for ${1:i} = ${2:1},${3:10} do\n\t${0:-- body...}\nend'
+  'Object requirement':
+    'prefix': 'Obj'
+    'body': 'local Object = require "Object"'
